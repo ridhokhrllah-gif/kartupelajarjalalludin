@@ -1,159 +1,129 @@
 <!DOCTYPE html>
-><html lang="id">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kartu Pelajar SMK AL HIKMA Teluknaga</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'poppins', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
-body{
-background: #cfd8dc;
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-}
+        body {
+            background: #cfd8dc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px; /* Jarak agar tidak nempel layar HP */
+        }
 
-.card {
-    width: 900px;
-    height: 550px;
-    background: linear-gradient(135deg, #e70808 40%, #000000 95%);
-    color: white;
-    border-radius: 15px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 6px 20px rgba(red, green, blue, alpha);
-}
+        .card {
+            width: 95%; /* Lebar fleksibel di layar kecil */
+            max-width: 900px; /* Lebar maksimal di laptop */
+            min-height: 500px; 
+            background: linear-gradient(135deg, #e70808 40%, #000000 95%);
+            color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+        }
 
-/* HEADER */
-.header {
-    background: #1a237e;
-    padding: 20px;
-    text-align: center;
-}
-.header h1 {
-    font-size: 34px;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-.header h2 {
-    margin-top: 5px;
-    font-size: 22px;
-    letter-spacing: 3px;
-}
-.header p {
-    font-size: 14px;
-    margin-top: 4px;
-}
-/*CONTENT*/
-.content {
-    display: flex;
-    padding: 30px 50px;
-}
+        /* HEADER */
+        .header {
+            background: #1a237e;
+            padding: 20px 20px 20px 80px; /* Ruang untuk logo di kiri */
+            text-align: center;
+        }
+        .header h1 { font-size: clamp(20px, 5vw, 34px); font-weight: 800; letter-spacing: 2px; }
+        .header h2 { font-size: clamp(14px, 4vw, 22px); letter-spacing: 2px; margin-top: 5px; }
+        .header p { font-size: clamp(10px, 2vw, 14px); margin-top: 4px; opacity: 0.9; }
 
-/* LOGO SEKOLAH */
-.logo {
-    position:absolute;
-    top: 20px;
-    left: 30px;
-    width: 100px;
-}
+        /* CONTENT */
+        .content {
+            display: flex;
+            flex-wrap: wrap; /* Biar bisa turun ke bawah di HP */
+            padding: 20px;
+            flex: 1;
+        }
 
-/* FOTO SISWA */
-.photo {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 10px;
-}
+        /* LOGO SEKOLAH */
+        .logo {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: clamp(50px, 10vw, 80px); /* Logo mengecil di HP */
+            z-index: 10;
+        }
 
-.photo img {
-    width: 160px;
-    height: 210px;
-    border-radius: 8px;
-    border: 4px solid white;
-    object-fit: cover;
-}
+        /* FOTO SISWA */
+        .photo {
+            flex: 1;
+            min-width: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
 
-/* DATA SISWA */
-.info {
-    flex: 2;
-    font-size: 18px;
-    padding-left: 40px;
-    line-height: 1.8;
-}
-.info p span {
-    font-weight: bold;
-}
+        .photo img {
+            width: 150px;
+            height: 200px;
+            border-radius: 8px;
+            border: 4px solid white;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
 
- 
- .footer {
-    position: absolute;
-    bottom: 15px;
-    left: 50px;
-    right: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    font-size: 14px;
- }
- 
- .footer .valid {
-    font-weight: 500;
- }
+        /* DATA SISWA */
+        .info {
+            flex: 2;
+            min-width: 250px; /* Mencegah teks terlalu sempit */
+            font-size: clamp(14px, 2.5vw, 18px);
+            padding: 0 20px;
+            line-height: 1.6;
+        }
+        .info p { margin-bottom: 8px; }
+        .info p span { font-weight: bold; color: #ffeb3b; }
 
- .footer .sign {
-    text-align: right;
-    line-height: 1.5;
- }
+        /* FOOTER */
+        .footer {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            font-size: clamp(10px, 2vw, 14px);
+            background: rgba(0,0,0,0.2);
+        }
 
- .footer .sign p {
-    margin: 0;
- }
+        .footer .valid { max-width: 60%; font-style: italic; }
+        .footer .sign { text-align: right; }
+        .footer .sign strong { display: block; margin-top: 5px; font-size: 1.1em; }
 
- .footer .sign strong {
-    display: block;
-    margin-top: 5px;
-    font-size: 16px;
- }
- 
- /* DEKORASI */
- .dots {
-    position: absolute;
-    left: 20px;
-    bottom: 60px;
-    display: grid;
-    grid-template-columns: repeat(3, 8px);
-    grid-gap: 6px;
- }
+        /* DEKORASI */
+        .dots { position: absolute; left: 20px; bottom: 80px; display: grid; grid-template-columns: repeat(3, 8px); grid-gap: 6px; }
+        .dot { width: 8px; height: 8px; background-color: #ffeb3b; border-radius: 50%; }
+        .bar { position: absolute; left: 20px; bottom: 70px; width: 80px; height: 4px; background: #cddc39; border-radius: 3px; }
 
- .dot {
-    width: 8px;
-    height: 8px;
-    background-color: #ffeb3b;
-    border-radius: 50%;
- }
-
- .bar {
-    position: absolute;
-    left: 20px;
-    bottom: 40px;
-    width: 120px;
-    height: 6px;
-    background: #cddc39;
-    border-radius: 3px;
- }
-
- </style>
+        /* RESPONSIVE UNTUK HP */
+        @media (max-width: 600px) {
+            .content { flex-direction: column; align-items: center; text-align: center; }
+            .info { padding-left: 0; margin-top: 10px; }
+            .header { padding-left: 20px; padding-top: 70px; } /* Memberi ruang logo di atas */
+            .logo { left: 50%; transform: translateX(-50%); top: 10px; }
+            .footer { flex-direction: column; text-align: center; gap: 15px; align-items: center; }
+            .footer .sign { text-align: center; }
+            .dots, .bar { display: none; } /* Sembunyikan dekorasi di HP agar tidak berantakan */
+        }
+    </style>
 </head>
-</body>
+<body>
 
 <div class="card">
     <img src="logo.png" class="logo" alt="logo sekolah">
@@ -161,7 +131,7 @@ height: 100vh;
     <div class="header">
         <h1>KARTU PELAJAR</h1>
         <h2>SMK AL HIKMA TELUKNAGA</h2>
-        <P> Desa pangkalan RT 005/002 Kec.Teluknaga Kab.Tangerang-Banten 15510 Telp. 02155930861</P>
+        <p>Desa Pangkalan RT 005/002 Kec. Teluknaga Kab. Tangerang-Banten 15510</p>
     </div>
 
     <div class="content">
@@ -170,18 +140,18 @@ height: 100vh;
         </div>
 
         <div class="info">
-            <p><span>Nama</span> : JalalLudin</p>
-            <p><span>Jenis Kelamin</span> : Laki-Laki</p>
-            <p><span>NISN</span> : 0106891143</p>
-            <p><span>Tempat, Tanggal Lahir</span> : Tangerang, 12 september 2010</p>
-            <p><span>Alamat</span> : kp. sukatani RT 003/005 kec. Tegalangus Kab. Tangerang Prov. Banten</p>
-            <p><span>Sekolah</span>: SMK ALHIKMA Teluknaga</p>
+            <p><span>Nama:</span> JalalLudin</p>
+            <p><span>Jenis Kelamin:</span> Laki-Laki</p>
+            <p><span>NISN:</span> 0106891143</p>
+            <p><span>TTL:</span> Tangerang, 12 Sept 2010</p>
+            <p><span>Alamat:</span> Kp. Sukatani RT 003/005 Kec. Tegalangus, Tangerang</p>
+            <p><span>Sekolah:</span> SMK AL HIKMA Teluknaga</p>
         </div>
     </div>
 
     <div class="footer">
         <div class="valid">
-            Berlaku Selama Menjadi Didik SMK Al Hikma Teluknaga
+            Berlaku Selama Menjadi Peserta Didik SMK Al Hikma Teluknaga
         </div>
         <div class="sign">
             <p>Kepala Sekolah</p>
@@ -196,5 +166,4 @@ height: 100vh;
 </div>
 
 </body>
-
 </html>
