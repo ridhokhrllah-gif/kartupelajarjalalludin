@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+><html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartu Pelajar SMK AL HIKMA Teluknaga</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+        }
+
+body{
+background: #cfd8dc;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.card {
+    width: 900px;
+    height: 550px;
+    background: linear-gradient(135deg, #e70808 40%, #000000 95%);
+    color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 6px 20px rgba(red, green, blue, alpha);
+}
+
+/* HEADER */
+.header {
+    background: #1a237e;
+    padding: 20px;
+    text-align: center;
+}
+.header h1 {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+.header h2 {
+    margin-top: 5px;
+    font-size: 22px;
+    letter-spacing: 3px;
+}
+.header p {
+    font-size: 14px;
+    margin-top: 4px;
+}
+/*CONTENT*/
+.content {
+    display: flex;
+    padding: 30px 50px;
+}
+
+/* LOGO SEKOLAH */
+.logo {
+    position:absolute;
+    top: 20px;
+    left: 30px;
+    width: 100px;
+}
+
+/* FOTO SISWA */
+.photo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10px;
+}
+
+.photo img {
+    width: 160px;
+    height: 210px;
+    border-radius: 8px;
+    border: 4px solid white;
+    object-fit: cover;
+}
+
+/* DATA SISWA */
+.info {
+    flex: 2;
+    font-size: 18px;
+    padding-left: 40px;
+    line-height: 1.8;
+}
+.info p span {
+    font-weight: bold;
+}
+
+ 
+ .footer {
+    position: absolute;
+    bottom: 15px;
+    left: 50px;
+    right: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 14px;
+ }
+ 
+ .footer .valid {
+    font-weight: 500;
+ }
+
+ .footer .sign {
+    text-align: right;
+    line-height: 1.5;
+ }
+
+ .footer .sign p {
+    margin: 0;
+ }
+
+ .footer .sign strong {
+    display: block;
+    margin-top: 5px;
+    font-size: 16px;
+ }
+ 
+ /* DEKORASI */
+ .dots {
+    position: absolute;
+    left: 20px;
+    bottom: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 8px);
+    grid-gap: 6px;
+ }
+
+ .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #ffeb3b;
+    border-radius: 50%;
+ }
+
+ .bar {
+    position: absolute;
+    left: 20px;
+    bottom: 40px;
+    width: 120px;
+    height: 6px;
+    background: #cddc39;
+    border-radius: 3px;
+ }
+
+ </style>
+</head>
+</body>
+
+<div class="card">
+    <img src="C:\Users\Lab MM\Documents\x TKJT\IMG_20251025_124644.png" class="logo" alt="logo sekolah">
+
+    <div class="header">
+        <h1>KARTU PELAJAR</h1>
+        <h2>SMK AL HIKMA TELUKNAGA</h2>
+        <P> Desa pangkalan RT 005/002 Kec.Teluknaga Kab.Tangerang-Banten 15510 Telp. 02155930861</P>
+    </div>
+
+    <div class="content">
+        <div class="photo">
+            <img src="C:\Users\Lab MM\Documents\x TKJT\IMG_20250916_064026_370.jpg" alt="foto siswa">
+        </div>
+
+        <div class="info">
+            <p><span>Nama</span> : JalalLudin</p>
+            <p><span>Jenis Kelamin</span> : Laki-Laki</p>
+            <p><span>NISN</span> : 0106891143</p>
+            <p><span>Tempat, Tanggal Lahir</span> : Tangerang, 12 september 2010</p>
+            <p><span>Alamat</span> : kp. sukatani RT 003/005 kec. Tegalangus Kab. Tangerang Prov. Banten</p>
+            <p><span>Sekolah</span>: SMK ALHIKMA Teluknaga</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="valid">
+            Berlaku Selama Menjadi Didik SMK Al Hikma Teluknaga
+        </div>
+        <div class="sign">
+            <p>Kepala Sekolah</p>
+            <strong>NURHAYANAH, S.pd</strong>
+        </div>
+    </div>
+
+    <div class="dots">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+    <div class="bar"></div>
+</div>
+
+</body>
+</html>
